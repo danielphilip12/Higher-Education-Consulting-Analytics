@@ -10,9 +10,26 @@ Include a data dictionary to explain the meaning of each variable or field in th
 
 | Column Name | Description |
 |-------------|-------------|
-| Column1     | Description1 |
-| Column2     | Description2 |
-| ...         | ...         |
+| College Name     | Name of the College |
+| State     | State college is in |
+| Public(1)/Private(2)         | Whether the school is public (1) or private (2)         |
+| # appli. rec'd         | number of applications recieved         |
+| # appl. accepted         | number of applications accepted         |
+| # new stud. enrolled         | number of new students enrolled         |
+| % new stud. from top 10%         | percent of new students from top 10%         |
+| % new stud. from top 25%         | percent of new students from top 25%          |
+| # FT Undergrad         | number of Full time undergrad         |
+| # PT Undergrad         | number of Part time undergrad         |
+| in-state tuition         | in state tuition cost         |
+| out-of-state tuition         | out of state tuition cost         |
+| room         | cost of room         |
+| board         | cost of board         |
+| add. fees         | additional fees cost         |
+| estim. book costs         | estimated book costs         |
+| estim. personal $         | estimated personal costs         |
+| % fac. w/PHD         | percent of faculty with PHD         |
+| stud./fac. ratio         | student/faculty ratio         |
+| Graduation Rate         | Graduation Rate         |
 
 ## Executive Summary
 
