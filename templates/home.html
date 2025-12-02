@@ -127,6 +127,87 @@
                 />
               </div>
             </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="room" class="form-label text-light"
+                  >Room:</label
+                >
+                <input
+                  type="number"
+                  name="room"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="board" class="form-label text-light"
+                  >Board:</label
+                >
+                <input
+                  type="number"
+                  name="board"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="full_time_undergrad" class="form-label text-light"
+                  >Full Time Undergrad Students</label
+                >
+                <input
+                  type="number"
+                  name="full_time_undergrad"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="part_time_undergrad" class="form-label text-light"
+                  >Part Time Undergrad Students:</label
+                >
+                <input
+                  type="number"
+                  name="part_time_undergrad"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="estim. book costs" class="form-label text-light"
+                  >Estimated Book Costs</label
+                >
+                <input
+                  type="number"
+                  name="estim. book costs"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="estim. personal $" class="form-label text-light"
+                  >Estimated Personal Cost:</label
+                >
+                <input
+                  type="number"
+                  name="estim. personal $"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+            </div>
             <br />
             <button type="submit" class="btn btn-success btn-lg col-12">
               Predict
@@ -151,7 +232,7 @@
             <div
               class="card-footer text-body-secondary card-subtitle text-body-secondary"
             >
-              NOTE: Actual Graduation Rate will be within ~13.1% on average
+              NOTE: Actual Graduation Rate will be within ~12.85% on average
             </div>
           </div>
           {% endif %}

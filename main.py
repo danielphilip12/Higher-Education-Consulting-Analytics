@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
-linreg = pickle.load(open('linreg.pkl','rb'))
+linreg = pickle.load(open('model.pkl','rb'))
 
 @app.route('/')
 def home():
