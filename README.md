@@ -47,7 +47,7 @@ Include key visualizations that highlight important aspects of the data. Use gra
 
 #### Visualization 1: [In-State Tuition Before and After Cleaning]
 
-[Description and interpretation of the first visualization.]
+This scatterplot and boxplot shows the distribution of the In-State Tuition column. To fill in the missing values, I grouped the median tuition cost by state, and imputed the values based on the state the college is located in.
 
 ##### Before Cleaning
 
@@ -57,9 +57,11 @@ Include key visualizations that highlight important aspects of the data. Use gra
 
 ![Visualization 2](./images/in-state-clean.png)
 
+After imputing the values, we can see a slight change in the mean and median, shown by a slightly larger gap between mean and median. We also see the count of the number of schools with a tuition around 10,000 now has a higher peak, which is likely where a lot of rows got imputed with. 
+
 #### Visualization 2: [Out-of-State Tuiton Before and After Cleaning]
 
-[Description and interpretation of the second visualization.]
+This scatterplot and boxplot shows the distribution of the Out-of-State Tuition column. To fill in the missing values, I grouped the mean tuition cost by state, and imputed the values based on the state the college is located in.
 
 
 ##### Before Cleaning
@@ -70,15 +72,45 @@ Include key visualizations that highlight important aspects of the data. Use gra
 
 ![Visualization 4](./images/out-of-state-clean.png)
 
+After imputing the values, there is not an obvious change to the histogram, but on the boxplot, we seem to have gotten more outliers after imputing values. This tells us that by imputing, we have changed the interquartile range, allowing more values to go outside the upper boundry for outliers. 
+
+### Key Correlation Visualizations
+
+These visualizatiosn are of the columns with the highest correlation coeffeicents in relation to Graduation Rate, which is our target variable. 
+
+#### Visualization 3: [In State Tuition vs Graduation Rate]
+
+This regression plot shows us there there is a strong positive correlation between in-state tuition and graduation rate, having a correlation coefficent of 0.59.
+
+![in-state vs grad](./images/in-state-tuition-grad-rate.png)
+
+#### Visualization 4: [Out of State Tuition vs Graduation Rate]
+
+This regression plot shows us there there is a strong positive correlation between out-of-state tuition and graduation rate, having a correlation coefficent of 0.61.
+
+![out-of-state vs grad](./images/out-of-state-tuition-grad-rate.png)
+
+#### Visualization 5: [# of New Students from top 10% vs Graduation Rate]
+
+This regression plot shows us there there is a strong positive correlation between the percent of new students from the top 10% and graduation rate, having a correlation coefficent of 0.53.
+
+![top_10_grad_rate](./images/top-10-grad-rate.png)
+
+#### Visualization 6: [# of New Students from top 25% vs Graduation Rate]
+
+This regression plot shows us there there is a strong positive correlation between the percent of new students from the top 25% and graduation rate, having a correlation coefficent of 0.53.
+
+![top_25_grad_rate](./images/top-25-grad-rate.png)
+
 ## Conclusions/Recommendations
 
 I tested with numerous models, such as Linear Regression, Random Forest, and K Nearest Neighbors. 
 
-The best performing model was Linear Regression when the test size was 0.3. 
+The best performing model was Random Forest when the test size was 0.20. 
 
-The $R^2$ score was 0.46, which means the model could explain 46% of the variance of the graduation rate. 
+The $R^2$ score was 0.58, which means the model could explain 58% of the variance of the graduation rate. 
 
-The RMSE score was 13.1, which means on average, it can accurately predict the graduation rate within 13.1%
+The RMSE score was 12.85, which means on average, it can accurately predict the graduation rate within 12.85%.
 
 ## Additional Information
 
