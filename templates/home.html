@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graduation Rate Prediction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-info">
+    <div class="container">
+      <h1 class="display-1 text-center">Graduation Rate Prediction</h1>
+      <br />
+      <div class="row">
+        <div class="col">
+          <form
+            action="/predict"
+            method="POST"
+            class="bg-primary p-3 mb-2 rounded border border-danger"
+          >
+            <div class="row">
+              <div class="col-6">
+                <label for="in-state tuition" class="form-label text-light"
+                  >In State Tuition:</label
+                >
+                <input
+                  type="number"
+                  name="in-state tuition"
+                  class="form-control"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="out-of-state tuition" class="form-label text-light"
+                  >Out of State Tuition:</label
+                >
+                <input
+                  type="text"
+                  name="out-of-state tuition"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="new_students_top_10" class="form-label text-light"
+                  >Percent of new students from top 10:</label
+                >
+                <input
+                  type="number"
+                  name="new_students_top_10"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="new_student_top_25" class="form-label text-light"
+                  >Percent of new students from top 25:</label
+                >
+                <input
+                  type="number"
+                  name="new_student_top_25"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="new_student_enrolled" class="form-label text-light"
+                  >New Students Enrolled:</label
+                >
+                <input
+                  type="number"
+                  name="new_student_enrolled"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="% fac. w/PHD" class="form-label text-light"
+                  >Percent of Faculty with PHD:</label
+                >
+                <input
+                  type="number"
+                  name="% fac. w/PHD"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+            </div>
+             <div class="row">
+              <div class="col-6">
+                <label for="student_faculty_ratio" class="form-label text-light"
+                  >Student Faculty Ratio:</label
+                >
+                <input
+                  type="number"
+                  name="student_faculty_ratio"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="school_type" class="form-label text-light"
+                  >Private (0) or Public (1):</label
+                >
+                <input
+                  type="number"
+                  name="school_type"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-success btn-lg col-12">
+              Predict
+            </button>
+          </form>
+        </div>
+        <div class="col">
+          {% if prediction_test %}
+          <div class="card bg-primary border border-danger">
+            <div class="card-body">
+              <h5 class="card-title">Prediction Result</h5>
+
+              <p
+                class="card-text display-6 bg-success p-3 mb-2 rounded text-white"
+              >
+                The predicted graduation rate is {{
+                "{:,.2f}%".format(prediction_test) }}
+                <!-- The predicted house value is ${{ prediction_test }} -->
+              </p>
+           
+            </div>
+            <div
+              class="card-footer text-body-secondary card-subtitle text-body-secondary"
+            >
+              NOTE: Actual Graduation Rate will be within ~13.1% on average
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
